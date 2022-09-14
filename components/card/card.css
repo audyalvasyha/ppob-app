@@ -1,0 +1,30 @@
+.card {
+  padding: 24px 16px 16px 16px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+iconify-icon {
+  color: #969696;
+}
+.card span {
+  color: #969696;
+}
+.card .card-body {
+  padding-bottom: 16px;
+}
+.card-body h2 {
+  margin: 2px 0;
+}
+.card .card-footer {
+  padding-top: 16px;
+  border-top: var(--mockup-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-footer span {
+  color: #570f0f;
+  font-size: 0.9rem;
+}

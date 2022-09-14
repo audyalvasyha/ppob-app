@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beli game terpercaya | Cobainaja</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"
+    />
+    <link rel="stylesheet" href="css/viewshop.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        border-radius: 4px;
+      }
+      .ph-item {
+        padding: 0.5rem;
+        margin-bottom: 0;
+        border: 0;
+      }
+      .ph-col-3 {
+        padding: 0.15rem 0.5rem;
+        margin: 0;
+        height: 80px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="dynamic_content"
+      style="
+        max-width: 567px;
+        margin: 0 auto;
+        position: relative;
+        background: transparent;
+        scroll-behavior: smooth;
+        border: none;
+      "
+    ></div>
+    <script>
+      $(document).ready(function () {
+        $("#dynamic_content").html(make_skeleton());
+
+        // jalankan fungsi load content setelah 2 detik
+        setTimeout(function () {
+          load_content();
+        }, 100);
+
+        function make_skeleton() {
+          var output = "";
+          output +=
+            "<div class='wrapper' style='padding-top: 70px;background-color: #fff;'>";
+          output += "<div class='header-top'>";
+          output += "<form class='search-box'>";
+          output += "<i class='fas fa-search'></i>";
+          output +=
+            "<input type='text' name='keyword' id='keyword' class='search-input' placeholder='Search for game ...' autocomplete='off'>";
+          output += "</form>";
+          output += "<div class='fitur'>";
+          output += "<i class='far fa-heart'></i>";
+          output += "<i class='far fa-comment-alt-lines'></i>";
+          output += "<i class='far fa-shopping-cart'></i>";
+          output += "</div>";
+          output += "</div>";
+
+          output += "<div class='ph-row' style='padding: 0 0.5rem .5rem 1rem'>";
+          output += "<div class='ph-col-4 big' style='height: 25px'></div>";
+          output += "</div>";
+
+          output += '<div class="ph-item" style="height: 30px">';
+          for (var count = 0; count < 4; count++) {
+            output += '<div class="ph-col-3">';
+            output += '<div class="ph-picture" ></div>';
+            output += "</div>";
+          }
+          output += "</div>";
+
+          output +=
+            "<div class='ph-row' style='padding: 3rem 1.5rem 0.25rem 1rem'>";
+          output += "<div class='ph-col-4 big'></div>";
+          output += '<div class="ph-col-4 empty big"></div>';
+          output += '<div class="ph-col-6"></div>';
+          output += "</div>";
+
+          output += "<div class='col-4'>";
+          output += '<div class="ph-item">';
+          for (var count = 0; count < 4; count++) {
+            output += '<div class="ph-col-3">';
+            output += '<div class="ph-picture"></div>';
+            output += "</div>";
+          }
+          output += "</div>";
+          output += '<div class="ph-item">';
+          for (var count1 = 0; count1 < 4; count1++) {
+            output += '<div class="ph-col-3">';
+            output += '<div class="ph-picture"></div>';
+            output += "</div>";
+          }
+          output += "</div>";
+          output += "<div class='col-4'>";
+          output += "<div class='ph-item'>";
+          output += "<div class='ph-col-12' style='padding: 2rem 0rem'>";
+          output += "<div class='ph-row' style='padding: 0 0.5rem 0.25rem'>";
+          output += "<div class='ph-col-4 big'></div>";
+          output += '<div class="ph-col-4 empty big"></div>';
+          output += '<div class="ph-col-6"></div>';
+          output += "</div>";
+          output += '<div class="ph-picture" style="height: 200px"></div>';
+          output += "</div>";
+          output += "</div>";
+          output += "</div>";
+          return output;
+        }
+
+        //membuat fungsi load data dari data.php
+        function load_content(limit) {
+          $.ajax({
+            url: "page_home.php",
+            method: "POST",
+            data: { limit: limit },
+
+            //jika sukses maka gantilah skeleton loader dengan data.php
+            success: function (data) {
+              $("#dynamic_content").html(data);
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

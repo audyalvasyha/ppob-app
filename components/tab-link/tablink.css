@@ -1,0 +1,28 @@
+#tab {
+  height: 50px;
+  width: 100%;
+  margin-top: 24px;
+  border-top: var(--mockup-border);
+  border-bottom: var(--mockup-border);
+}
+#tab ul.tab-link {
+  width: fit-content;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+#tab ul.tab-link .item-link a {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: #696969;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+#tab ul.tab-link .item-link a:focus {
+  border-bottom: 2px solid var(--text-color);
+  color: #000;
+  background-color: transparent;
+}

@@ -1,0 +1,23 @@
+ul.breadcumb {
+  margin-left: -8px;
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+}
+ul.breadcumb li.item-link {
+  padding: 8px;
+}
+ul.breadcumb li.item-link a {
+  color: #696969;
+  display: flex;
+  text-decoration: none;
+}
+ul.breadcumb li.item-link a::after {
+  content: url("https://api.iconify.design/uim/angle-right-b.svg");
+  height: 14px;
+  font-size: 10px;
+  margin-left: 8px;
+}
+ul.breadcumb li.item-link:last-child a::after {
+  content: "";
+}
