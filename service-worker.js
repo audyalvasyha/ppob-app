@@ -4,7 +4,7 @@ const CACHE_NAME = 'my-app-cache-v1';
 // Files to cache
 const urlsToCache = [
   '/',
-  '/index.html',
+  '/index.php',
   '/styles.css',
   '/app.js',
   '/icons/icon-192x192.png',
